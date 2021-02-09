@@ -21,13 +21,13 @@ public class BlousePage {
     }
 
     public WebElement getAddToCartButton() throws InterruptedException {
-        Thread.sleep(5000);
-//        wait.waitVisibilityElement(By.cssSelector("#add_to_cart button"));
+//        Thread.sleep(5000);
+        wait.waitVisibilityElement(By.cssSelector("#add_to_cart button"));
         return driver.findElement(By.cssSelector("#add_to_cart button"));
     }
 
     public WebElement getProceedToCheckoutButton() {
-        wait.waitVisibilityElement(By.cssSelector(".clearfix a[title='Proceed to checkout']"));
+        wait.waitElementToBeClickable(By.cssSelector(".clearfix a[title='Proceed to checkout']"));
         return driver.findElement(By.cssSelector(".clearfix a[title='Proceed to checkout']"));
     }
 }
