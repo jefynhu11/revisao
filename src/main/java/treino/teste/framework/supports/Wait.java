@@ -20,6 +20,11 @@ public class Wait {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 
+    public WebElement waitElementToBeClickable(By by){
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+        return wait.until(ExpectedConditions.elementToBeClickable(by));
+    }
+
     public WebElement waitLoadElement(WebElement element){
         try {
             return new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(element));
