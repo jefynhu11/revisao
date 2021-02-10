@@ -14,8 +14,6 @@ public class IndexPage {
 
     public WebElement getProductButton(){
         return driver.findElement(By.cssSelector("#homefeatured img[title='Blouse']"));
-//        return driver.findElement(By.cssSelector("#homefeatured a[title='Blouse']"));
-//        return driver.findElement(By.cssSelector("#homefeatured > li:nth-child(2) > div > div.left-block > div > a.product_img_link > img"));
     }
 
     public WebElement getSearchField() {
