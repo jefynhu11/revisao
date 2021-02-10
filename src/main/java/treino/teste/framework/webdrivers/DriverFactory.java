@@ -3,16 +3,21 @@ package treino.teste.framework.webdrivers;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverFactory {
-    public static WebDriver getInstance(Drivers tipos) {
+
+    public static WebDriver driver;
+
+    public static WebDriver getBrowser(Drivers tipos) {
         switch (tipos) {
             case CHROME:
                 WebDriverManager.chromedriver().setup();
-
-                return new ChromeDriver();
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("--start-maximized");
+                return driver = new ChromeDriver(options);
             case FIREFOX:
                 WebDriverManager.firefoxdriver().setup();
                 return new FirefoxDriver();
