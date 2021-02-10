@@ -1,7 +1,7 @@
 package treino.teste.automationPractice.tasks;
 
 import org.openqa.selenium.WebDriver;
-import treino.teste.automationPractice.pageObjects.IndexPage;
+import treino.teste.automationPractice.pageobjects.IndexPage;
 
 public class IndexTask {
     private final IndexPage indexPage;

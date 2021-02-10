@@ -1,4 +1,4 @@
-package treino.teste.automationPractice.pageObjects;
+package treino.teste.automationPractice.pageobjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

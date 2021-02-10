@@ -1,4 +1,4 @@
-package treino.teste.automationPractice.testCases;
+package treino.teste.automationPractice.testcases;
 
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;

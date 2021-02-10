@@ -1,7 +1,7 @@
 package treino.teste.automationPractice.tasks;
 
 import org.openqa.selenium.WebDriver;
-import treino.teste.automationPractice.pageObjects.BlousePage;
+import treino.teste.automationPractice.pageobjects.BlousePage;
 
 public class BlouseTask {
 

@@ -1,7 +1,7 @@
 package treino.teste.automationPractice.tasks;
 
 import org.openqa.selenium.WebDriver;
-import treino.teste.automationPractice.pageObjects.ProductPage;
+import treino.teste.automationPractice.pageobjects.ProductPage;
 
 public class ProductTask {
     private final ProductPage productPage;
