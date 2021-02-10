@@ -2,21 +2,18 @@ package treino.teste.framework.supports;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
-import org.openqa.selenium.WebDriver;
 import treino.teste.framework.webdrivers.DriverFactory;
 import treino.teste.framework.webdrivers.DriverManager;
 import treino.teste.framework.webdrivers.Drivers;
 
-public class BaseTest {
+public class BaseTest extends DriverFactory {
 
     private static String url = "http://automationpractice.com/";
 
     @BeforeAll
     public static void setUp(){
-        WebDriver driverInstance = DriverFactory.getInstance(Drivers.CHROME);
-        DriverManager.setDriver(driverInstance);
-        DriverManager.getDriver().manage().window().maximize();
-//        DriverManager.getDriver().get("http://automationpractice.com/");
+        driver = getBrowser(Drivers.CHROME);
+        DriverManager.setDriver(driver);
         DriverManager.getDriver().get(url);
     }
 
