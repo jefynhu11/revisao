@@ -19,6 +19,7 @@ public class IndexTask {
     }
 
     public void digitarPesquisar(String args){
+        JsExecutor.highLightElement(driver, indexPage.getSearchField());
         indexPage.getSearchField().sendKeys(args);
     }
 
