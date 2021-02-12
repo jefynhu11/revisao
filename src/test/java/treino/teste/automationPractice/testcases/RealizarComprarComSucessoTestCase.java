@@ -1,12 +1,19 @@
 package treino.teste.automationPractice.testcases;
 
+import com.aventstack.extentreports.Status;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import treino.teste.automationPractice.tasks.BlouseTask;
 import treino.teste.automationPractice.tasks.IndexTask;
 import treino.teste.automationPractice.tasks.ProductTask;
 import treino.teste.framework.supports.BaseTest;
+import treino.teste.framework.tools.Report;
+import treino.teste.framework.tools.Screenshot;
 import treino.teste.framework.webdrivers.DriverManager;
+
+import java.io.IOException;
+
+import static treino.teste.framework.tools.Report.extentTest;
 
 public class RealizarComprarComSucessoTestCase extends BaseTest {
 
@@ -17,7 +24,10 @@ public class RealizarComprarComSucessoTestCase extends BaseTest {
 
     @Test
     public void test() throws InterruptedException {
+        try {
         //opção 1
+        Report.createTest("Realiza de comprar com sucesso");
+        extentTest.log(Status.INFO, "Abriu a navegador", Screenshot.screenshotBase64(driver));
         indexTask.escolherProduto();
         blouseTask.adicionaCarrinho();
 
@@ -25,10 +35,11 @@ public class RealizarComprarComSucessoTestCase extends BaseTest {
 //        indexTask.digitarPesquisar("Blouse");
 //        indexTask.clicarPesquisar();
 //        productTask.clicarImagem();
-        try {
+
             Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            extentTest.log(Status.ERROR, "Realiza de comprar não foi com sucesso", Screenshot.screenshotBase64(driver));
         }
+
     }
 }
