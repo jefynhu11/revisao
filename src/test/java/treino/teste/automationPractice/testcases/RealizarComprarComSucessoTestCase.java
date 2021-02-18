@@ -4,6 +4,7 @@ import com.aventstack.extentreports.Status;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import treino.teste.automationPractice.tasks.BlouseTask;
+import treino.teste.automationPractice.tasks.CriarContaTask;
 import treino.teste.automationPractice.tasks.IndexTask;
 import treino.teste.automationPractice.tasks.ProductTask;
 import treino.teste.framework.supports.BaseTest;
@@ -21,6 +22,7 @@ public class RealizarComprarComSucessoTestCase extends BaseTest {
     private final IndexTask indexTask = new IndexTask(driver);
     private final ProductTask productTask = new ProductTask(driver);
     private final BlouseTask blouseTask = new BlouseTask(driver);
+    private final CriarContaTask criarContaTask = new CriarContaTask(driver);
 
     @Test
     public void test() throws InterruptedException {
@@ -30,6 +32,7 @@ public class RealizarComprarComSucessoTestCase extends BaseTest {
         extentTest.log(Status.INFO, "Abriu a navegador", Screenshot.screenshotBase64(driver));
         indexTask.escolherProduto();
         blouseTask.adicionaCarrinho();
+        criarContaTask.cadastrarConta();
 
         //opção 2
 //        indexTask.digitarPesquisar("Blouse");
