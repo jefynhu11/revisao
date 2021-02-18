@@ -34,6 +34,7 @@ public class BlouseTask {
 
         validarTotalValor();
         JsExecutor.highLightElement(driver, blousePage.getProceedToCheckoutButton());
+        blousePage.getProceedToCheckoutButton().click();
     }
 
     private void validarNameProduct() {
@@ -48,24 +49,22 @@ public class BlouseTask {
     }
 
     private void validarTotalValor() {
-//        try {
-//            JsExecutor.highLightElement(driver, blousePage.getTotalText());
-//            String text = blousePage.getTotalText().getText();
-//            Assertions.assertEquals("$28.00", text);
-//            Report.extentTest.log(Status.PASS, "O valor está correto", Screenshot.screenshotBase64(driver));
-//        } catch (Exception e) {
-//            Report.extentTest.log(Status.ERROR, "O valor não está correto", Screenshot.screenshotBase64(driver));
-//
-//        }
-
-        JsExecutor.highLightElement(driver, blousePage.getTotalText());
-        String text = blousePage.getTotalText().getText();
-        System.out.println("Teste > " + text);
-        if (text.equals("$29.00")) {
+        try {
+            JsExecutor.highLightElement(driver, blousePage.getTotalText());
+            String text = blousePage.getTotalText().getText();
+            Assertions.assertEquals("$29.00", text);
             Report.extentTest.log(Status.PASS, "O valor está correto", Screenshot.screenshotBase64(driver));
-        } else {
+        } catch (Exception e) {
             Report.extentTest.log(Status.ERROR, "O valor não está correto", Screenshot.screenshotBase64(driver));
         }
+
+//        JsExecutor.highLightElement(driver, blousePage.getTotalText());
+//        String text = blousePage.getTotalText().getText();
+//        if (text.equals("$29.00")) {
+//            Report.extentTest.log(Status.PASS, "O valor está correto", Screenshot.screenshotBase64(driver));
+//        } else {
+//            Report.extentTest.log(Status.ERROR, "O valor não está correto", Screenshot.screenshotBase64(driver));
+//        }
 
     }
 }
