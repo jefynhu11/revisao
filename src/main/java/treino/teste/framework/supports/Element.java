@@ -6,7 +6,7 @@ import treino.teste.framework.tools.JsExecutor;
 
 public class Element {
 
-    public void elemento(WebDriver driver, WebElement page) {
+    public void elementSend(WebDriver driver, WebElement page) {
         JsExecutor.highLightElement(driver, page);
     }
 

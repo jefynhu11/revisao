@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import treino.teste.framework.supports.Wait;
+import treino.teste.framework.tools.JsExecutor;
 
 public class CriarContaPage {
     private final WebDriver driver;
@@ -29,5 +30,17 @@ public class CriarContaPage {
     public WebElement getYourPersonalInformationText(){
         wait.waitVisibilityElement(By.xpath("//div[@class='clearfix']//..//h3"));
         return driver.findElement(By.xpath("//div[@class='clearfix']//..//h3"));
+    }
+
+    public WebElement getTitleMrCheckBox() {
+        return driver.findElement(By.id("id_gender1"));
+    }
+
+    public WebElement getFirstNameFieldText() {
+        return driver.findElement(By.id("customer_firstname"));
+    }
+
+    public WebElement getLastNameFieldText() {
+        return driver.findElement(By.id("customer_lastname"));
     }
 }
