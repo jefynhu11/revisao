@@ -48,14 +48,24 @@ public class CriarContaTask {
 
     private void cadastrarDados() {
 
-        String text = criarContaPage.getYourPersonalInformationText().getText();
-        System.out.println("Teste: " + text);
-        JsExecutor.highLightElement(driver, criarContaPage.getYourPersonalInformationText());
-
         try{
-            
-        } catch (Exception e) {
+            String text = criarContaPage.getYourPersonalInformationText().getText();
+            JsExecutor.highLightElement(driver, criarContaPage.getYourPersonalInformationText());
+            Assertions.assertEquals("YOUR PERSONAL INFORMATION", text);
+            if(text.equals("YOUR PERSONAL INFORMATION")){
+                System.out.println("OK");
+            } else {
+                System.out.println("FAIL");
+            }
+            Report.extentTest.log(Status.PASS, "O titulo da cadastrar está correto", Screenshot.screenshotBase64(driver));
+            criarContaPage.getTitleMrCheckBox().click();
+            JsExecutor.highLightElement(driver, criarContaPage.getFirstNameFieldText());
+            criarContaPage.getFirstNameFieldText().sendKeys(fakers.getFirstName());
 
+            JsExecutor.highLightElementTest(driver, criarContaPage.getLastNameFieldText());
+            criarContaPage.getLastNameFieldText().sendKeys(fakers.getLastName());
+        } catch (Exception e) {
+            Report.extentTest.log(Status.ERROR, "O titulo da cadastrar não está correto", Screenshot.screenshotBase64(driver));
         }
     }
 
