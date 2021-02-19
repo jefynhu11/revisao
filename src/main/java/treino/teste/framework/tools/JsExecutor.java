@@ -9,6 +9,10 @@ public class JsExecutor {
         scriptElement(driver, element, HighLight.RED.getArgument());
     }
 
+    public static void highLightElementTest(WebDriver driver, WebElement element){
+        scriptElement(driver, element, HighLight.RED.getArgument());
+    }
+
     public static void highLightSelect(WebDriver driver, Select select){
         scriptSelect(driver, select, HighLight.RED.getArgument());
     }
