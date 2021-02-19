@@ -30,7 +30,8 @@ public class Report {
     public static void configurarExtentReport(){
         CreateFolder.createDirectory(CAMINHO_REPORT);
 
-        htmlReporter = new ExtentHtmlReporter(CAMINHO_REPORT + File.separator + REPORT_NAME);
+//        htmlReporter = new ExtentHtmlReporter(CAMINHO_REPORT + File.separator + REPORT_NAME);
+        htmlReporter = new ExtentHtmlReporter(CAMINHO_REPORT + File.separator + "ReportTest.html");
 
         htmlReporter.config().setDocumentTitle("Automação de web");
         htmlReporter.config().setReportName("Automação de teste");
