@@ -26,7 +26,6 @@ public class RealizarComprarComSucessoTestCase extends BaseTest {
 
     @Test
     public void test() throws InterruptedException {
-        try {
         //opção 1
         Report.createTest("Realiza de comprar com sucesso");
         extentTest.log(Status.INFO, "Abriu a navegador", Screenshot.screenshotBase64(driver));
@@ -40,9 +39,7 @@ public class RealizarComprarComSucessoTestCase extends BaseTest {
 //        productTask.clicarImagem();
 
             Thread.sleep(5000);
-        } catch (Exception e) {
-            extentTest.log(Status.ERROR, "Realiza de comprar não foi com sucesso", Screenshot.screenshotBase64(driver));
-        }
+//            extentTest.log(Status.ERROR, "Realiza de comprar não foi com sucesso", Screenshot.screenshotBase64(driver));
 
     }
 }
