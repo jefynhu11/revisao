@@ -14,16 +14,14 @@ public class IndexTask {
     }
 
     public void escolherProduto(){
-        JsExecutor.highLightElement(driver, indexPage.getProductButton());
-        indexPage.getProductButton().click();
+        JsExecutor.highLightElementWithClick(driver, indexPage.getProductButton());
     }
 
-    public void digitarPesquisar(String args){
-        JsExecutor.highLightElement(driver, indexPage.getSearchField());
-        indexPage.getSearchField().sendKeys(args);
+    public void digitarPesquisar(String value){
+        JsExecutor.highLightElementWithSend(driver, indexPage.getSearchField(), value);
     }
 
     public void clicarPesquisar() {
-        indexPage.getSearchButtom().click();
+        JsExecutor.highLightElementWithClick(driver, indexPage.getSearchField());
     }
 }
